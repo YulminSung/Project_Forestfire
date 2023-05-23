@@ -1,0 +1,50 @@
+# 프로젝트 진행 사항
+
+## 5/23
+1. 진행 사항
+    - 공공데이터 API(기상청 / 산림청) 및 데이터 일부 수집
+        + 산불발생통계(대국민포털) - XML
+        + 산 정보 조회 - XML
+        + 지상(종관, ASOS) 시간자료 JSON + XML
+        + 지상(종관, ASOS) 일 자료 JSON + XML
+        + 산불위험예보정보 JSON + XML
+    - 논문 및 참고자료 수집
+        + Paulo Cortez, Aníbal de Jesus Raimundo Morais. 2007: A data mining approach to predict forest fires using meteorological data, Associação Portuguesa para a Inteligência Artificial (APPIA)
+        + 이찬중, 임무영, 이요한. 2023: 머신러닝을 활용한 산불발생예측모형 개발과 과제. J. Korean Soc. Hazard Mitig 23(2), 29-39. https://doi.org/10.9798/KOSHAM.2023.23.2.29
+        + 안승환, 2016: 기상 데이터를 이용한 산불 피해규모의 예측방법 연구, 통계청논문 우수논문집
+        + 원명수, 장근창, 윤석희, 2018: 봄철과 가을철의 기상에 의한 전국 통합 산불발생확률 모형 개발, 한국농림기상학회지 제 20권 제4호(2018) p348-356 https://doi.org/10.5532/KJAFM.2018.20.4.348
+    - Streamlit 대시보드 초안 구성
+    - PPT 목차 초안 구성
+
+2. 미흡 사항
+    - 데이터 추가 확보
+    - 도메인 지식 부족
+    - 분석 방향성 불명확
+
+3. 다음 목표
+    - 분석 방향 회의
+    - 공공데이터 API 및 데이터 수집
+    - 논문 정독을 통한 도메인 지식 습득
+
+5/24
+진행 사항
+
+미흡 사항
+
+다음 목표
+
+5/25
+진행 사항
+
+미흡 사항
+
+다음 목표
+
+5/26
+진행 사항
+
+미흡 사항
+
+다음 목표
+
+
