@@ -32,7 +32,6 @@ from PIL import Image
 
 import utils
 import home_app
-import data_app
 import eda_app
 import stat_app
 import service_app

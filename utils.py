@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import streamlit as st
 import pandas as pd
 import geopandas as gpd
@@ -16,7 +15,6 @@ import warnings
 warnings.filterwarnings("ignore")
 
 credentials = service_account.Credentials.from_service_account_info(st.secrets["gcp_service_account"])
-
 servicekey = st.secrets.api_key.data_serviceKey
 
 def get_dataframe_from_bigquery(dataset_id, table_id):
@@ -76,6 +74,8 @@ def get_geodataframe_from_bigquery(dataset_id, table_id):
     return gdf
 
 
+
+@st.cache_data
 def load_data(type):
     if type == "RAW_DATA":
         # BigQuery 에 RAW_DATA Load

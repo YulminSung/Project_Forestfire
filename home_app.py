@@ -39,7 +39,6 @@ from google.cloud import bigquery
 from google.oauth2 import service_account
 
 import utils
-import data_app
 import eda_app
 import stat_app
 import model_app
@@ -483,7 +482,6 @@ def create_dwi_choropleth_map(dataframe, geometry_column, dwi_columns):
     map.add_child(colormap)
 
     st_folium(map)
-
 
 def home_app():
     """
