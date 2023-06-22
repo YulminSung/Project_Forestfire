@@ -4,12 +4,11 @@ from streamlit_option_menu import option_menu
 
 import utils
 import home_app
-import stats_app
-# import data_app
-# import eda_app
-# import stat_app
-# import model_app
-# import service_app
+import data_app
+import eda_app
+import stat_app
+import model_app
+import service_app
 
 import time
 import warnings
@@ -22,7 +21,7 @@ def main():
     """
 
     st.set_page_config(page_title="강원도 산불 예측 및 피해 최소화 프로젝트",
-                       page_icon=':fire:',
+                       page_icon=None,
                        layout="wide",
                        initial_sidebar_state="auto",
                        menu_items=None)
@@ -45,13 +44,13 @@ def main():
     if selected == "HOME":
         home_app.home_app()
     elif selected == "DATA":
-        pass
+        data_app.data_app()
     elif selected == "EDA":
         pass
     elif selected == "STAT":
-        stats_app.run_stats()
-    elif selected == "MODEL":
         pass
+    elif selected == "MODEL":
+        model_app.model_app()
     elif selected == "SERVICE":
         pass
 
