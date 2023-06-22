@@ -14,12 +14,18 @@ from PIL import Image
 
 import warnings
 warnings.filterwarnings("ignore")
+#
+# KEY_PATH = ".config/"
+#
+# key_path = KEY_PATH + "fireforest-2023-9fb91d08cec6.json"
+# servicekey_path = KEY_PATH + "serviceKey.json"
 
-KEY_PATH = ".config/"
 
-key_path = KEY_PATH + "fireforest-2023-9fb91d08cec6.json"
-servicekey_path = KEY_PATH + "serviceKey.json"
-
+# Create API client.
+credentials = service_account.Credentials.from_service_account_info(
+    # Very Important Point
+    st.secrets["gcp_service_account"]
+)
 
 def get_service_key(servicekey_path, key_name):
     """

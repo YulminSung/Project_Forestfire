@@ -60,30 +60,16 @@ def home_app():
     st.write('<hr>', unsafe_allow_html=True)
 
     # Content
-    st.markdown("<h4 style='font-size: 24px; color: black;'>🔍 Goal of the Competition</h4>", unsafe_allow_html=True)
+    st.markdown("<h4 style='font-size: 24px; color: black;'>🔥🌳 산불위험지수(DWI) 산출 🌳🔥</h4>", unsafe_allow_html=True)
     st.write(
         """
-The goal of this competition is to predict MDS-UPDR scores, which measure progression in patients with Parkinson's disease. 
-The Movement Disorder Society-Sponsored Revision of the Unified Parkinson's Disease Rating Scale (MDS-UPDRS) is a comprehensive assessment of both motor and non-motor symptoms associated with Parkinson's. 
-You will develop a model trained on data of protein and peptide levels over time in subjects with Parkinson’s disease versus normal age-matched control subjects.
-
-Your work could help provide important breakthrough information about which molecules change as Parkinson’s disease progresses.
+            강원도 9개 지역별 설정한 ML Model 에 입력하여, 얻어진 확률들의 예측치를 이용하여 산불위험지수(DWI) 지도시각화
         """
     )
 
-    st.write('<hr>', unsafe_allow_html=True)
 
     # Content
-    st.markdown("<h4 style='font-size: 24px; color: black;'>🔍 Goal of the Competition</h4>", unsafe_allow_html=True)
-    st.write(
-        """
-The goal of this competition is to predict MDS-UPDR scores, which measure progression in patients with Parkinson's disease. 
-The Movement Disorder Society-Sponsored Revision of the Unified Parkinson's Disease Rating Scale (MDS-UPDRS) is a comprehensive assessment of both motor and non-motor symptoms associated with Parkinson's. 
-You will develop a model trained on data of protein and peptide levels over time in subjects with Parkinson’s disease versus normal age-matched control subjects.
 
-Your work could help provide important breakthrough information about which molecules change as Parkinson’s disease progresses.
-        """
-    )
 
     st.write('<hr>', unsafe_allow_html=True)
 
@@ -95,5 +81,5 @@ Your work could help provide important breakthrough information about which mole
         st.info('**GitHub: [@YulminSung](https://github.com/YulminSung/Parkinson_1)**', icon="💻")
     with c3:
         st.info(
-            '**Data: [Kaggle](https://www.kaggle.com/competitions/amp-parkinsons-disease-progression-prediction)**',
-            icon="🧠")
+            '**Data: [Public API](https://www.data.go.kr/data/15059093/openapi.do)**',
+            icon="📕")
