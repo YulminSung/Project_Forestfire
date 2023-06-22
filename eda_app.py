@@ -252,9 +252,7 @@ def eda_app():
         "longitude": "mean"
     }).reset_index()
 
-    map_img1 = Image.open("map_img/gangwon.png")
-    map_img2 = Image.open("map_img/gangwon12.png")
-    map_img3 = Image.open("map_img/gangwon9.png")
+    region_img = Image.open("streamlit_img/region.png")
 
     selected_chart = st.sidebar.selectbox("Select Chart", ["EDA 과정", "지도 시각화", "기상 데이터"])
 
@@ -263,45 +261,14 @@ def eda_app():
         st.markdown("<h4> 지도 시각화를 위한 지역 분할 과정 </h4>", unsafe_allow_html=True)
         st.markdown("---")
 
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.image(map_img1)
-        with col2:
-            st.image(map_img2)
-        with col3:
-            st.image(map_img3)
+        st.image(region_img)
 
         st.markdown("")
-        st.markdown("강원도 기상청 예특보 관할구역에 대한 내용을"
-                    "참고하여 지역 분할 진행")
+        st.markdown("✔ **강원도 기상청 예특보 관할구역에 대한 내용을 참고하여 지역 분할 진행**")
         st.markdown("")
+        st.markdown("✔ **최초 읍면동 기준으로 12분할을 진행하였지만 기상 관측소 위치에서 벗어난 지역들이 발생하여 수정이 필요하다고 판단**")
         st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("최초 읍면동 기준으로 12분할을 진행하였지만  "
-                    " 기상 관측소 위치에서 벗어난 지역들이 발생하여 수정이 필요하다고 판단")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("")
-        st.markdown("지역적 특성과 기상 관측소 위치를 고려하여  "
-                    "총 9분할로 진행")
+        st.markdown("✔ **지역적 특성과 기상 관측소 위치를 고려하여 총 9분할로 진행**")
 
     if selected_chart == '지도 시각화':
 
@@ -313,6 +280,7 @@ def eda_app():
             col1, col2, col3 = st.columns([1, 8, 1])
             with col1:
                 pass
+
             with col2:
                 # w_regions별 value_counts 계산
                 region_counts = forestfire_occurs['w_regions'].value_counts().reset_index()
@@ -326,8 +294,8 @@ def eda_app():
 
                 visualize_forestfire_by_region(merged_Count, "w_regions", "Fire_Counts", "fire_counts_cmap", "Forest Fire Counts by Region")
 
-                st.markdown("**2013 ~ 2022년**의 산불 발생 건수 지도입니다.")
-                st.markdown("상대적으로 유동 인구가 많은 내륙 지역에서 산불 발생이 많이 발생한 것을 확인할 수 있습니다.")
+                st.markdown("✔ **2013 ~ 2022년의 산불 발생 건수 지도**")
+                st.markdown("✔ **상대적으로 유동 인구가 많은 내륙 지역에서 산불 발생이 많이 발생한 것을 확인**")
 
             with col3:
                 pass
@@ -347,8 +315,8 @@ def eda_app():
 
                 visualize_forestfire_by_region(merged_Area, "w_regions", "DamageArea", "DamageArea_cmap", "DamageArea by Region")
 
-                st.markdown("**2013 ~ 2022년**의 산불 피해 범위 지도입니다.")
-                st.markdown("2022년에 발생했던 강릉,동해 산불로 인해 강릉 지역이 가장 큰 피해를 입은 것으로 나타나고 있습니다.")
+                st.markdown("✔ **2013 ~ 2022년의 산불 피해 범위 지도**")
+                st.markdown("✔ **2022년에 발생했던 강릉,동해 산불로 인해 강릉 지역이 가장 큰 피해를 입은 것으로 나타남**")
 
             with col3:
                 pass
@@ -368,8 +336,9 @@ def eda_app():
 
                 visualize_forestfire_by_region(merged_Amount, "w_regions", "Amount", "Amount_cmap", "Amount by Region")
 
-                st.markdown("**2013 ~ 2022년**의 산불 피해 금액 지도입니다.")
-                st.markdown("고성에서 강릉으로 연결되는 해안 지역이 대형 산불에 대한 피해가 컸으며, 그로 인해 피해 금액도 높게 나타나고 있습니다.")
+                st.markdown("✔ **2013 ~ 2022년의 산불 피해 금액 지도**")
+                st.markdown("✔ **고성에서 강릉으로 연결되는 해안 지역이 대형 산불에 대한 피해가 큰 것으로 나타남**")
+                st.markdown("✔ **그로 인해 피해 금액도 높게 나타남**")
 
             with col3:
                 pass
@@ -520,5 +489,5 @@ def eda_app():
             legend._legend_box.align = "center"
 
             st.pyplot(fig)
-            st.markdown("강수 데이터를 명목형 변수 (0, 1)로 변환하였음.")
-            st.markdown("0 = 비가 오지 않았음, 1 = 비가 왔음")
+            st.markdown("✔ **강수 데이터를 명목형 변수 (0, 1)로 변환**")
+            st.markdown("✔ **0 = 비가 오지 않았음, 1 = 비가 왔음**")

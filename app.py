@@ -44,7 +44,7 @@ def main():
     elif selected == "EDA":
         eda_app.eda_app()
     elif selected == "STAT":
-        stat_app.run_stats()
+        stat_app.stat_app()
     elif selected == "MODEL":
         model_app.model_app()
     elif selected == "SERVICE":

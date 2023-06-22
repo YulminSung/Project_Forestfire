@@ -94,12 +94,12 @@ def get_weather_days_data(serviceKey, weather_stations, start_date_str=None, end
 
     # 시작 날짜와 끝 날짜를 생성합니다
     if start_date_str is None:
-        start_date = datetime.now() - timedelta(days=8)  # 시작 날짜를 2013년 1월 1일로 설정합니다
+        start_date = datetime.now() - timedelta(days=100)  # 시작 날짜를 2013년 1월 1일로 설정합니다
     else:
         start_date = datetime.strptime(start_date_str, "%Y%m%d")
 
     if end_date_str is None:
-        end_date = datetime.now() - timedelta(days=1)  # 어제 날짜를 구하기 위해 현재 날짜에서 1일을 뺍니다
+        end_date = datetime.now() - timedelta(days=93)  # 어제 날짜를 구하기 위해 현재 날짜에서 1일을 뺍니다
     else:
         end_date = datetime.strptime(end_date_str, "%Y%m%d")
 
@@ -290,7 +290,7 @@ def today_weather(weather_stations):
     weather_days = weather_days.drop(['stnId', 'stnAddress', 'stnLatitude', 'stnLongitude', 'h1', 'h2', 'h3', 'h4'], axis=1)
 
     # 날짜 설정
-    target_date = (datetime.now() - timedelta(days=2)).strftime("%Y-%m-%d")
+    target_date = (datetime.now() - timedelta(days=94)).strftime("%Y-%m-%d")
 
     # 필요한 열을 기준으로 그룹화하고 평균 계산
     weather_days = weather_days[weather_days["tm"] == target_date].reset_index(drop=True)
@@ -527,14 +527,17 @@ def home_app():
             "<h2 style='text-align: center; color: black;'>강원도 산불 예측 및 피해 최소화 프로젝트</span>", unsafe_allow_html=True)
         st.write('<hr>', unsafe_allow_html=True)
     with con2:
-        st.markdown("<h4 style='font-size: 24px; text-align: center; color: black;'>🔥🌳 실시간 산불위험지수(DWI) 산출 🌳🔥</h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='font-size: 24px; text-align: center; color: black;'>🔥🌳 실시간 산불위험지수(DWI) 🌳🔥</h4>", unsafe_allow_html=True)
+        st.markdown("")
+        st.markdown("<h6 style='font-size: 16px; text-align: center; color: black;'> 봄철 (2023년 3월 중순)을 예시로 시각화 </h4>",
+                    unsafe_allow_html=True)
         create_dwi_choropleth_map(merged_df, "geometry", "DWI")
     with con3:
-        st.write(
-            """
-                강원도 9개 지역별 설정한 ML Model 에 입력하여, 얻어진 확률들의 예측치를 이용하여 산불위험지수(DWI) 지도시각화
-            """
-        )
+        st.markdown("<h6 style='font-size: 16px; text-align: center; color: black;'> 강원도 9개 지역별 설정한 ML MODEL 에 입력하여, </h4>",
+                    unsafe_allow_html=True)
+        st.markdown("")
+        st.markdown("<h6 style='font-size: 16px; text-align: center; color: black;'> 얻어진 확률들의 예측치를 이용하여 산불위험지수(DWI) 지도시각화 </h4>",
+                    unsafe_allow_html=True)
 
     st.write('<hr>', unsafe_allow_html=True)
 

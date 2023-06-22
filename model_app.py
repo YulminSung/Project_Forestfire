@@ -174,17 +174,13 @@ def display_results (y_real, pred, pred_proba):
 
     st.write("confusion matrix is:")
     st.write(confusion_matrix(y_real, pred))
-    st.write('======================================================')
+    st.markdown("---")
     st.write("Accuracy score is:", accuracy_score(y_real, pred))
-    st.write('======================================================')
     st.write("Precision is : ", precision_score(y_real, pred))
-    st.write('======================================================')
     st.write("Recall is : ", recall_score(y_real, pred))
-    st.write('======================================================')
     st.write("F1 score is : ", f1_score(y_real, pred))
-    st.write('======================================================')
     st.write("ROC AUC score is : ", roc_auc_score(y_real, pred_proba))
-    st.write('======================================================')
+    st.markdown("---")
     st.write("Classification report is:")
     st.write(classification_report_to_dataframe(classification_report(y_real, pred)))
 
@@ -532,103 +528,103 @@ def model_app():
     if selected_data == "Site_2" and selected_model == "LogisticRegression":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LogisticRegression")
+        processing(data_2, "LogisticRegression")
     elif selected_data == "Site_2" and selected_model == "XGBoost":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "XGBoost")
+        processing(data_2, "XGBoost")
     elif selected_data == "Site_2" and selected_model == "LightGBM":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LightGBM")
+        processing(data_2, "LightGBM")
 
     if selected_data == "Site_3" and selected_model == "LogisticRegression":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LogisticRegression")
+        processing(data_3, "LogisticRegression")
     elif selected_data == "Site_3" and selected_model == "XGBoost":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "XGBoost")
+        processing(data_3, "XGBoost")
     elif selected_data == "Site_3" and selected_model == "LightGBM":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LightGBM")
+        processing(data_3, "LightGBM")
 
     if selected_data == "Site_4" and selected_model == "LogisticRegression":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LogisticRegression")
+        processing(data_4, "LogisticRegression")
     elif selected_data == "Site_4" and selected_model == "XGBoost":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "XGBoost")
+        processing(data_4, "XGBoost")
     elif selected_data == "Site_4" and selected_model == "LightGBM":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LightGBM")
+        processing(data_4, "LightGBM")
 
     if selected_data == "Site_5" and selected_model == "LogisticRegression":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LogisticRegression")
+        processing(data_5, "LogisticRegression")
     elif selected_data == "Site_5" and selected_model == "XGBoost":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "XGBoost")
+        processing(data_5, "XGBoost")
     elif selected_data == "Site_5" and selected_model == "LightGBM":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LightGBM")
+        processing(data_5, "LightGBM")
 
     if selected_data == "Site_6" and selected_model == "LogisticRegression":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LogisticRegression")
+        processing(data_6, "LogisticRegression")
     elif selected_data == "Site_6" and selected_model == "XGBoost":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "XGBoost")
+        processing(data_6, "XGBoost")
     elif selected_data == "Site_6" and selected_model == "LightGBM":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LightGBM")
+        processing(data_6, "LightGBM")
 
     if selected_data == "Site_7" and selected_model == "LogisticRegression":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LogisticRegression")
+        processing(data_7, "LogisticRegression")
     elif selected_data == "Site_7" and selected_model == "XGBoost":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "XGBoost")
+        processing(data_7, "XGBoost")
     elif selected_data == "Site_7" and selected_model == "LightGBM":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LightGBM")
+        processing(data_7, "LightGBM")
 
     if selected_data == "Site_8" and selected_model == "LogisticRegression":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LogisticRegression")
+        processing(data_8, "LogisticRegression")
     elif selected_data == "Site_8" and selected_model == "XGBoost":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "XGBoost")
+        processing(data_8, "XGBoost")
     elif selected_data == "Site_8" and selected_model == "LightGBM":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LightGBM")
+        processing(data_8, "LightGBM")
 
     if selected_data == "Site_9" and selected_model == "LogisticRegression":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LogisticRegression")
+        processing(data_9, "LogisticRegression")
     elif selected_data == "Site_9" and selected_model == "XGBoost":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "XGBoost")
+        processing(data_9, "XGBoost")
     elif selected_data == "Site_9" and selected_model == "LightGBM":
         st.markdown(f"<h2 style='text-align: center; color: black;'>{selected_data} - {selected_model} Model</span>", unsafe_allow_html = True)
         st.markdown("---")
-        processing(data_1, "LightGBM")
+        processing(data_9, "LightGBM")
