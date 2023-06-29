@@ -526,8 +526,8 @@ def home_app():
     # Link
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.info('**Project: [@KingBeeM/ForestFire](https://github.com/KingBeeM/ForestFire)**', icon="💡")
+        st.info('**Project: [@YulminSung/forestfire](https://github.com/YulminSung/forestfire)**', icon="💡")
     with c2:
-        st.info('**GitHub: [@KingBeeM](https://github.com/KingBeeM)**', icon="💻")
+        st.info('**GitHub: [@YulminSung](https://github.com/YulminSung)**', icon="💻")
     with c3:
         st.info('**Data: [Public API](https://www.data.go.kr/data/15059093/openapi.do)**', icon="📕")
