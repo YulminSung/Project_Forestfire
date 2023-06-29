@@ -49,12 +49,14 @@
     - 실시간 API 요청을 통한 각 지역별 실시간 산불위험지수(DWI) 지도시각화
 
 ![image1](https://github.com/KingBeeM/ForestFire/blob/main/file/img/home_img.png)
+
 - **EDA**
   - 강원도 기상 정보를 바탕으로 강원도 지역 9 분할 과정
     - 강원지방기상청 관할 예·특보구역에 따라 12 분할
     - 강원도 기상관측소 위치정보를 고려해 9 분할로 수정
 
 ![image2](https://github.com/KingBeeM/ForestFire/blob/main/file/img/EDA_img.png)
+
 - **STAT**
   - 기상요인을 고려해 강원도 지역을 9개로 분할한 각 지역에 대해 통계분석
     - Python 환경에서 통계분석에 한계가 있어 SPSS 에서 진행
@@ -62,12 +64,14 @@
 
 ![image3](https://github.com/KingBeeM/ForestFire/blob/main/file/img/stat_img1.png)
 ![image4](https://github.com/KingBeeM/ForestFire/blob/main/file/img/stat_img2.png)
+
 - **ML**
   - 기상요인을 고려해 강원도 지역을 9개로 분할한 각 지역에 대해 ML 모델 생성
   - 각 지역별로 LogisticRegression / XGBoost / LightGBM 모델 생성
   - 각 모델별 ROC-AUC 비교를 통한 각 지역별 적합한 모델 선정
 
 ![image5](https://github.com/KingBeeM/ForestFire/blob/main/file/img/model_img.png)
+
 - **DL**
   - EfficentNet-B7 모델을 사용한 산불 이미지 분류 모델
   - 6개의 Class 에 대해 모델 훈련
