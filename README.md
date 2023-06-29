@@ -74,7 +74,7 @@
   - Precision / Recall 을 고려한 Top 2 Accuracy 사용
   - Warning message 와 GPS 기반 주소 및 이미지 전송
 
-![image6](https://github.com/KingBeeM/ForestFire/blob/main/file/img/DL_img.png | width=100)
+![image6](https://github.com/KingBeeM/ForestFire/blob/main/file/img/DL_img.png =250x250)
 ## ✔ 설치 방법
 
 ### Windows
