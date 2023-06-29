@@ -7,7 +7,7 @@
 
 ## [3. Deep Learning](https://github.com/YulminSung/Project_Forestfire/blob/main/code/DL_EfficientNet.ipynb/ ".DL Link")<br/>
 
-## [4. PDF](https://github.com/YulminSung/Project_Forestfire/blob/main/file/ppt/forestfire.pdf/ "PDF Link")<br/>
+## [4. PDF](https://github.com/YulminSung/Project_Forestfire/blob/main/file/ppt/ForestFire.pdf "PDF Link")<br/>
 
 ---
 
