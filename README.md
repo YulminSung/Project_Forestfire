@@ -1,96 +1,135 @@
-# ForestFire 
-## Measures to Minimize Forest Fire Damage
+# ForestFire (~ 2023.06.23)
+<br/>
 
-[Streamlit 링크]() <br/><br/>
-[발표 영상]() <br/><br/>
-[데모 시연]() <br/><br/>
-[포트 폴리오]() <br/><br/>
-![screensh]()
+## [1. Streamlit Service](https://kingbeem-forestfire-app-zxbk0n.streamlit.app/ "Streamlit Link")<br/>
 
-## 1.프로젝트의 시작 (2023.05.22 ~ 2023.06.23)
-- 산불 피해 최소화 대책 
- 
-## 2. 대회 목표 : 산불 예측 대응 체계를 위한 위험 예보 시스템 구축
-- 공공 데이터 API 를 통한 실시간 데이터 수집
-- 이미지 크롤링 및 딥러닝을 통한 예측 시스템 구축
-- 산불에 관련된 여러 변수들을 파악하여 회귀분석 진행
-- 
-## 3. 세부 수행 내용
-- 행정안전부 빅데이터 공통기반 시스템, 기상청(동네예보, KLAPS, 초단기 실황), 산악기상망 등의 빅데이터와 산림청, 국가정보자원관리원의 공간 API로 Data 수집
-- 수집된 DB 로딩 및 전처리
-- 로지스틱 회귀분석, 공간 정보 분석을 통한 데이터 분석 및 시각화
-- 산불위험 제보, 산불 지역 알림 분석 및 시각화
-- 이용자의 GPS를 이용하여 인접 위치에 대한 산림정보 및 산불위험지수 등급화, 산불위험 제보 서비스
-- 행정구역별 산불 위험등급, 대형 산불 위험정보, 산불위험 통계, 과거 자료 검색 등의 서비스
+## [2. Personal Code](https://github.com/KingBeeM/ForestFire/tree/main/file/code/ ".Code Link")<br/>
 
-## 4. 데이터
-- 공공 데이터 API
-  + 기상청
-  + 국가정보자원관리원 
-  + 공공 데이터
-  + 지도
-  + 
-## 5. ERD (개체 관계 모델)
-![screensh]()
+## [3. Deep Learning](https://github.com/KingBeeM/ForestFire/blob/main/file/code/DL_EfficientNet.ipynb/ ".DL Link")<br/>
 
-## 6. 팀 구성
-- 사용언어 : Python : 3.9.13v
-- 작업툴 : VS code
+## [4. PDF](https://github.com/KingBeeM/ForestFire/tree/main/file/ppt/Forestfire.pdf/ "PDF Link")<br/>
+
+---
+
+## ✔ 목적
+강원도 산불 예측 및 피해 최소화 프로젝트 : 머신러닝과 딥러닝을 활용한 모델 개발
+<br/>
+
+## ✔ 데이터
+| 제공 사이트          | 제공 기관   | 한글 이름  | 사용 테이블 이름 |
+|---------------------|------------|--------|-------------|
+| 공공데이터포털      | 기상청     | 기상청_지상(종관, ASOS) 일자료 조회서비스 | weather_days|
+| 공공데이터포털      | 기상청     | 기상청_관측지점정보 | weather_stations|
+| 공공데이터포털      | 산림청    | 산림청_산불발생통계(대국민포털) | forestfire_occurs_add |
+| 공공데이터포털      | 행정안전부 | 산불발생이력 | forestfire_occurs|
+| 국가공간정보포털    | 국토교통부 | 행정구역_읍면동(법정동) | gangwon_UMD |
+| 국가공간정보포털    | 국토교통부 | 행정구역시군구_경계 | gangwon_SSG |
+| 행정표준코드관리시스템 | 국토교통부 | 행정구역_코드(법정동) | gangwon_code|
+<br/>
+
+## ✔ ERD
+![image](https://github.com/KingBeeM/ForestFire/blob/main/file/img/ERD.png)
+<br/>
+
+## ✔ Flow Chart
+![image](https://github.com/KingBeeM/ForestFire/blob/main/file/img/flowchart.png)
+<br/>
+
+## ✔ 팀 구성
+- 사용언어 : Python
+- 작업툴 : VS Code / PyCharm / Google Colab / Google BigQuery / QGIS / IBM SPSS Statistics
 - 인원 : 4명
-- 주요 업무 :
-  + 공공데이터 API를 통한 데이터 수집
-  + 회귀분석, 공간 정보 분석을 통한 데이터 분석 및 시각화
-  + 이미지 크롤링을 통한 딥러닝
-  + Streamlit 대시보드 개발을 통한 웹 서비스
+- 주요 업무 : 강원도 산불 예측 및 피해 최소화 프로젝트 : 머신러닝과 딥러닝을 활용한 모델 개발
 - 기간 : 2023.05.22 ~ 2023.06.23
-***
 
-## 7. 주요 기능
-- Home
-  + 
-- Description
-  + 
-- Data
-  +  
-- EDA
-  +   
-  + 
-  + 
-  + 
-- STAT
-  + 
-  + 
-- DL
-  + 
-  + 
-***
+## ✔ 주요 기능
+- **HOME**
+  - 강원도 산불위험지수(DWI) 지도시각화
+    - 기상요인을 고려해 강원도 지역을 9개로 나누어서 각각 지역에 대해 ML 모델 생성
+    - 실시간 API 요청을 통한 각 지역별 실시간 산불위험지수(DWI) 지도시각화
 
-## 8. 설치 방법
+![image1](https://github.com/KingBeeM/ForestFire/blob/main/file/img/home_img.png)
+- **EDA**
+  - 강원도 기상 정보를 바탕으로 강원도 지역 9 분할 과정
+    - 강원지방기상청 관할 예·특보구역에 따라 12 분할
+    - 강원도 기상관측소 위치정보를 고려해 9 분할로 수정
+
+![image2](https://github.com/KingBeeM/ForestFire/blob/main/file/img/EDA_img.png)
+- **STAT**
+  - 기상요인을 고려해 강원도 지역을 9개로 분할한 각 지역에 대해 통계분석
+    - Python 환경에서 통계분석에 한계가 있어 SPSS 에서 진행
+    - 각 지역별 종속변수에 영향을 미치는 독립변수 요소에 대해 파악
+
+![image3](https://github.com/KingBeeM/ForestFire/blob/main/file/img/stat_img1.png)
+![image4](https://github.com/KingBeeM/ForestFire/blob/main/file/img/stat_img2.png)
+- **ML**
+  - 기상요인을 고려해 강원도 지역을 9개로 분할한 각 지역에 대해 ML 모델 생성
+  - 각 지역별로 LogisticRegression / XGBoost / LightGBM 모델 생성
+  - 각 모델별 ROC-AUC 비교를 통한 각 지역별 적합한 모델 선정
+
+![image5](https://github.com/KingBeeM/ForestFire/blob/main/file/img/model_img.png)
+- **DL**
+  - EfficentNet-B7 모델을 사용한 산불 이미지 분류 모델
+  - 6개의 Class 에 대해 모델 훈련
+  - Precision / Recall 을 고려한 Top 2 Accuracy 사용
+  - Warning message 와 GPS 기반 주소 및 이미지 전송
+
+![image6](https://github.com/KingBeeM/ForestFire/blob/main/file/img/DL_img.png)
+## ✔ 설치 방법
+
 ### Windows
-+ 버전 확인
-    - vscode : 1.74.1
-    - python : 3.9.13
-    - 라이브러리 : pandas (1.5.3), numpy (1.23.5), plotly (5.14.1), matplotlib (3.7.1), streamlit (1.21.0), seaborn (0.12.2), pingouin (0.5.3), statsmodels (0.13.2), scikit-learn (1.2.2), xgboost (1.7.5), pandas-profiling (3.6.3), streamlit-option-menu (0.3.2), streamlit_pandas_profiling (0.1.3), scipy(1.9.1), 
-
-
-- 프로젝트 파일을 다운로드 받습니다. 
-
-```bash
-git clone https://github.com/ChoiJMS2/forestfire.git
+- 버전 확인
+  - VS Code / PyCharm : Python 3.10.9
+  - Google Colab
+  - 라이브러리 : 
 ```
-
-- 프로젝트 경로에서 가상환경 설치 후 접속합니다. (Windows 10 기준)
-```bash
+beautifulsoup4==4.11.1
+bs4==0.0.1
+db-dtypes==1.1.1
+Flask==2.2.2
+folium==0.14.0
+geopandas==0.13.0
+google-cloud-bigquery==3.11.0
+googlemaps==4.10.0
+keras==2.12.0
+lxml==4.9.1
+matplotlib==3.7.0
+missingno==0.5.2
+numpy==1.23.5
+opencv-python==4.7.0.72
+pandas==1.5.3
+pandas-gbq==0.19.2
+pingouin==0.5.3
+plotly==5.9.0
+scikit-learn==1.2.1
+seaborn==0.12.2
+selenium==4.8.3
+shapely==2.0.1
+statsmodels==0.13.5
+streamlit==1.20.0
+streamlit-option-menu==0.3.5
+streamlit-pandas-profiling==0.1.3
+tensorflow==2.12.0
+torch==2.0.0
+torchvision==0.15.1
+tornado==6.1
+tqdm==4.64.1
+xgboost==1.7.5
+```
+- 프로젝트 파일을 다운로드 받습니다.
+```
+git clone https://github.com/YulminSung/Project_Forestfire.git
+```
+- 프로젝트 경로에서 가상환경 설치 후 접속합니다. (Windows 11 기준)
+```
 virtualenv venv
 source venv/Scripts/activate
 ```
-
-- 라이브러리를 설치합니다. 
-```bash
+- 라이브러리를 설치합니다.
+```
 pip install -r requirements.txt
 ```
-
-- streamlit 명령어를 실행합니다. 
-```bash
+- streamlit 명령어를 실행합니다.
+```
 streamlit run app.py
 ```
