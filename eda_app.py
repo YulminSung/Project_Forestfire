@@ -32,12 +32,18 @@ warnings.filterwarnings("ignore")
 
 @st.cache_data()
 def font_set():
-    # matplotlib 한글 폰트 설정
+    # 폰트 경로 설정
     font_dirs = [os.getcwd() + '/nanum']
+
+    # 폰트 파일 탐색
     font_files = fm.findSystemFonts(fontpaths=font_dirs)
+
+    # 폰트 매니저에 폰트 추가
     for font_file in font_files:
         fm.fontManager.addfont(font_file)
-    plt.rcParams['font.family'] = 'NanumGothic'
+
+    # Matplotlib의 폰트 설정
+    plt.rcParams['font.family'] = fm.FontProperties(fname=font_files[0]).get_name()  # 첫 번째 폰트를 사용하도록 설정
 
 def visualize_forestfire_by_region(dataframe, region_column, value_column, cmap_name, title):
     """
@@ -92,8 +98,8 @@ def plot_boxplot(data_frames, column_name, labels, colors, title, ylabel):
         None
     """
     font_set()
-    font_Names = [f.name for f in fm.fontManager.ttflist]
-    plt.rc('font', family=font_Names)
+    # font_Names = [f.name for f in fm.fontManager.ttflist]
+    # plt.rc('font', family=font_Names)
     plt.style.use('ggplot')
     plt.rcParams['figure.figsize'] = (10, 5)
     plt.rcParams['font.size'] = 12
@@ -149,8 +155,8 @@ def plot_boxplot_rhm(data_frames, column_name, labels, colors, title, ylabel):
     """
 
     font_set()
-    font_Names = [f.name for f in fm.fontManager.ttflist]
-    plt.rc('font', family=font_Names)
+    # font_Names = [f.name for f in fm.fontManager.ttflist]
+    # plt.rc('font', family=font_Names)
     plt.style.use('ggplot')
     plt.rcParams['figure.figsize'] = (10, 5)
     plt.rcParams['font.size'] = 12
@@ -205,8 +211,8 @@ def plot_boxplot_wd(data_frames, column_name, labels, colors, title, ylabel):
         None
     """
     font_set()
-    font_Names = [f.name for f in fm.fontManager.ttflist]
-    plt.rc('font', family=font_Names)
+    # font_Names = [f.name for f in fm.fontManager.ttflist]
+    # plt.rc('font', family=font_Names)
     plt.style.use('ggplot')
     plt.rcParams['figure.figsize'] = (10, 5)
     plt.rcParams['font.size'] = 12
@@ -457,8 +463,8 @@ def eda_app():
             labels = ['지역 1', '지역 2', '지역 3', '지역 4', '지역 5', '지역 6', '지역 7', '지역 8', '지역 9']
 
             font_set()
-            font_Names = [f.name for f in fm.fontManager.ttflist]
-            plt.rc('font', family=font_Names)
+            # font_Names = [f.name for f in fm.fontManager.ttflist]
+            # plt.rc('font', family=font_Names)
             plt.style.use('ggplot')
             plt.rcParams['figure.figsize'] = (12, 8)
             plt.rcParams['font.size'] = 12
