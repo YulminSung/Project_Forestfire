@@ -17,6 +17,12 @@ def fireWarring():
     st.image("http://forestfire.nifos.go.kr/images/map/img_forest_today.gif")
 
 def crawling():
+    """
+    네이버 뉴스를 크롤링하여 제목과 URL을 수집하는 함수입니다.
+
+    Returns:
+        DataFrame: 크롤링 결과를 담은 데이터프레임
+    """
     search = '강원도 산불'
     page = 5
     #start수를 1, 11, 21, 31 ...만들어 주는 함수
@@ -61,6 +67,12 @@ def crawling():
     return news_df
 
 def news():
+    """
+    네이버 뉴스를 크롤링하여 표 형태로 출력하는 함수입니다.
+
+    Returns:
+        None
+    """
     st.subheader("News")
     news_df = crawling()
     # Add link to phone number column
@@ -73,6 +85,12 @@ def news():
     st.markdown(news_df, unsafe_allow_html=True)
 
 def youtubeNews():
+    """
+        YouTube 동영상 재생기를 포함한 뉴스 섹션을 생성하는 함수입니다.
+
+        Returns:
+            None
+    """
     c1, c2, c3 = st.columns([3, 3, 2])
 
     with c3:
@@ -121,6 +139,12 @@ def youtubeNews():
                """, unsafe_allow_html=True)
 
 def callNumber():
+    """
+        전화번호 정보를 보여주는 탭을 포함한 함수입니다.
+
+        Returns:
+            None
+    """
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["강원도", "산림청", "시/군", "소방서", "국립공원", "한국전력공사"])
     with tab1 :
         st.subheader("강원도")
@@ -190,6 +214,12 @@ def callNumber():
         st.markdown(elect_table, unsafe_allow_html=True)
 
 def declaration():
+    """
+        신고 및 문의를 위한 정보를 입력받고 전송하는 함수입니다.
+
+        Returns:
+            None
+    """
     buff, col, buff2 = st.columns([1, 3, 1])
     with col :
         input_user_name=st.text_input("이름", key="name",max_chars=5)
@@ -214,6 +244,12 @@ def declaration():
             st.write('전송을 누르면 접수가 완료됩니다.')
 
 def fireStats():
+    """
+       대형 화재 통계 정보를 표시하는 함수입니다.
+
+       Returns:
+           None
+    """
     bigfire = pd.read_csv("data/bigfire.csv", encoding='cp949')
     # Convert DataFrame to HTML table with center-aligned content and column names
     bigfire_table = bigfire.to_html(index=False, classes=["center-aligned"], justify="center", escape=False, na_rep="")

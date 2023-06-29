@@ -77,6 +77,15 @@ def get_geodataframe_from_bigquery(dataset_id, table_id):
 
 @st.cache_data
 def load_data(type):
+    """
+        데이터를 로드하는 함수입니다.
+
+        Args:
+            type (str): 데이터 유형 ("RAW_DATA", "PREPROCESSING_DATA", "ANALSIS_DATA")
+
+        Returns:
+            dataframe : 데이터 프레임 또는 지리정보 데이터 프레임
+    """
     if type == "RAW_DATA":
         # BigQuery 에 RAW_DATA Load
         weather_stations = get_dataframe_from_bigquery("RAW_DATA", "weather_stations").sort_values(["stnId"])

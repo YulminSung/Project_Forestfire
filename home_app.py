@@ -70,12 +70,12 @@ def get_weather_days_data(serviceKey, weather_stations, start_date_str=None, end
 
     # 시작 날짜와 끝 날짜를 생성합니다
     if start_date_str is None:
-        start_date = datetime.now() - timedelta(days=8)  # 시작 날짜를 2013년 1월 1일로 설정합니다
+        start_date = datetime.now() - timedelta(days=9)  # 시작 날짜를 2013년 1월 1일로 설정합니다
     else:
         start_date = datetime.strptime(start_date_str, "%Y%m%d")
 
     if end_date_str is None:
-        end_date = datetime.now() - timedelta(days=1)  # 어제 날짜를 구하기 위해 현재 날짜에서 1일을 뺍니다
+        end_date = datetime.now() - timedelta(days=2)  # 어제 날짜를 구하기 위해 현재 날짜에서 1일을 뺍니다
     else:
         end_date = datetime.strptime(end_date_str, "%Y%m%d")
 
@@ -182,7 +182,7 @@ def today_weather(weather_stations):
     """
     날씨 데이터를 전처리하는 함수입니다.
 
-    Parameters:
+    Args:
         - weather_stations (pandas.DataFrame): 기상 관측소 정보가 포함된 데이터프레임
 
     Returns:
@@ -492,11 +492,13 @@ def home_app():
 
     dwi_df = pd.DataFrame(dwi_data, columns=['w_regions', 'DWI'])
     merged_df = gangwon_regions.merge(dwi_df, on='w_regions', how='left')
+    target_date = (datetime.now() - timedelta(days=2)).strftime("%Y-%m-%d")
 
 
-    empyt1, con1, empty2 = st.columns([0.5, 1.0, 0.5])
-    empyt1, con2, empty2 = st.columns([0.5, 0.5, 0.5])
-    empyt1, con3, empty2 = st.columns([0.4, 1.0, 0.4])
+    empyt1, con1, empty2 = st.columns([0.2, 1.0, 0.2])
+    empyt1, con2, empty2 = st.columns([0.4, 1.0, 0.4])
+    empyt1, con3, empty2 = st.columns([0.5, 0.5, 0.5])
+    empyt1, con4, empty2 = st.columns([0.4, 1.0, 0.4])
 
     with con1:
         st.markdown(
@@ -506,10 +508,11 @@ def home_app():
         st.markdown("<h4 style='font-size: 24px; text-align: center; color: black;'>🔥🌳 실시간 산불위험지수(DWI) 🌳🔥</h4>",
                     unsafe_allow_html=True)
         st.markdown("")
-        st.markdown("<h6 style='font-size: 16px; text-align: center; color: black;'> 봄철 (2023년 3월 중순)을 예시로 시각화 </h4>",
+        st.markdown(f"<h6 style='font-size: 16px; text-align: center; color: black;'> ({target_date}) 실시간 DWI 지수 시각화 </h4>",
                     unsafe_allow_html=True)
-        create_dwi_choropleth_map(merged_df, "geometry", "DWI")
     with con3:
+        create_dwi_choropleth_map(merged_df, "geometry", "DWI")
+    with con4:
         st.markdown(
             "<h6 style='font-size: 16px; text-align: center; color: black;'> 강원도 9개 지역별 설정한 ML MODEL 에 입력하여, </h4>",
             unsafe_allow_html=True)
@@ -523,8 +526,8 @@ def home_app():
     # Link
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.info('**Data Analyst: [@BLOG]()**', icon="💡")
+        st.info('**Project: [@KingBeeM/ForestFire](https://github.com/KingBeeM/ForestFire)**', icon="💡")
     with c2:
-        st.info('**GitHub: [@GitHub](https://github.com/)**', icon="💻")
+        st.info('**GitHub: [@KingBeeM](https://github.com/KingBeeM)**', icon="💻")
     with c3:
         st.info('**Data: [Public API](https://www.data.go.kr/data/15059093/openapi.do)**', icon="📕")

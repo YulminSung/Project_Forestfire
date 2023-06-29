@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.colors import LinearSegmentedColormap
-from matplotlib import font_manager as fm
+import matplotlib.font_manager as fm
 import seaborn as sns
 import plotly.express as px
 import folium
@@ -40,14 +40,14 @@ import os
 import warnings
 warnings.filterwarnings("ignore")
 
+@st.cache_data()
 def font_set():
     # matplotlib 한글 폰트 설정
     font_dirs = [os.getcwd() + '/nanum']
     font_files = fm.findSystemFonts(fontpaths=font_dirs)
     for font_file in font_files:
         fm.fontManager.addfont(font_file)
-    fm._load_fontmanager(try_read_cache=False)
-
+    plt.rcParams['font.family'] = 'NanumGothic'
 
 def split_train_test(data):
     """
@@ -142,6 +142,15 @@ def train_lightgbm(X_train, y_train):
 
 
 def classification_report_to_dataframe(report):
+    """
+    분류 보고서를 데이터프레임으로 변환합니다.
+
+    Args:
+        report (str): 클래스 분류 보고서 문자열. 보통 sklearn.metrics.classification_report 함수의 결과를 사용합니다.
+
+    Returns:
+        pandas.DataFrame: 분류 보고서를 기반으로 생성된 데이터프레임. 각 클래스에 대한 Precision, Recall, F1-Score, Support가 열로 표시됩니다.
+    """
     report_data = []
     lines = report.split('\n')
     for line in lines[2:-3]:
@@ -185,6 +194,24 @@ def display_results (y_real, pred, pred_proba):
     st.write(classification_report_to_dataframe(classification_report(y_real, pred)))
 
 def plot_feature_importance_lr(model, X_train):
+    """
+       Logistic Regression 모델의 피처 중요도를 시각화합니다.
+
+       Args:
+           model (sklearn.linear_model.LogisticRegression): Logistic Regression 모델 객체.
+           X_train (pandas.DataFrame): 학습 데이터의 피처 데이터프레임.
+
+       Returns:
+           None
+    """
+    font_set()
+    font_Names = [f.name for f in fm.fontManager.ttflist]
+    plt.rc('font', family=font_Names)
+    plt.style.use('default')
+    plt.rcParams['figure.figsize'] = (10, 5)
+    plt.rcParams['font.size'] = 12
+    plt.rcParams['axes.unicode_minus'] = False
+
     coefficients = model.coef_[0]
     feature_importance = pd.DataFrame({'Feature': X_train.columns, 'Importance': np.abs(coefficients)})
     feature_importance = feature_importance.sort_values('Importance', ascending=True)
@@ -192,6 +219,24 @@ def plot_feature_importance_lr(model, X_train):
     st.pyplot(plt)
 
 def plot_feature_importance(model, feature_names):
+    """
+        모델의 피처 중요도를 시각화합니다.
+
+        Args:
+            model: 피처 중요도를 계산할 모델 객체. feature_importances_ 속성을 가져야 합니다.
+            feature_names (list): 피처 이름을 담고 있는 리스트.
+
+        Returns:
+            None
+    """
+    font_set()
+    font_Names = [f.name for f in fm.fontManager.ttflist]
+    plt.rc('font', family=font_Names)
+    plt.style.use('default')
+    plt.rcParams['figure.figsize'] = (10, 5)
+    plt.rcParams['font.size'] = 12
+    plt.rcParams['axes.unicode_minus'] = False
+
     importances = model.feature_importances_
     indices = np.argsort(importances)
     plt.figure(figsize=(10, 6))
@@ -266,6 +311,13 @@ def plot_roc_curve(tpr, fpr, scatter = True):
     Returns:
         None
     """
+    font_set()
+    font_Names = [f.name for f in fm.fontManager.ttflist]
+    plt.rc('font', family=font_Names)
+    plt.style.use('default')
+    plt.rcParams['figure.figsize'] = (10, 5)
+    plt.rcParams['font.size'] = 12
+    plt.rcParams['axes.unicode_minus'] = False
 
     plt.figure(figsize = (5, 5))
     sns.lineplot(x = fpr, y = tpr)
@@ -340,6 +392,14 @@ def plot_dwi_intervals(y_real, pred, pred_proba, num_intervals=10):
 
     df = pd.DataFrame(data)
 
+    font_set()
+    font_Names = [f.name for f in fm.fontManager.ttflist]
+    plt.rc('font', family=font_Names)
+    plt.style.use('default')
+    plt.rcParams['figure.figsize'] = (10, 5)
+    plt.rcParams['font.size'] = 12
+    plt.rcParams['axes.unicode_minus'] = False
+
     plt.figure()
     # 그래프 그리기
     plt.plot(df['DWI'], df['Forestfire_occur'], marker='o', label='Forestfire_occur', color="red")
@@ -365,6 +425,16 @@ def plot_dwi_intervals(y_real, pred, pred_proba, num_intervals=10):
     st.pyplot(plt)
 
 def processing(data, model):
+    """
+       데이터를 전처리하고 주어진 모델을 학습하고 평가하는 함수입니다.
+
+       Args:
+           data (DataFrame): 전처리할 데이터 프레임.
+           model (str): 사용할 모델의 이름. 'LogisticRegression', 'XGBoost', 'LightGBM' 중 하나를 선택해야 합니다.
+
+       Returns:
+           None
+    """
     X_train, X_test, y_train, y_test = split_train_test(data)
     feature_names = X_train.columns
 

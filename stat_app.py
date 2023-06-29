@@ -24,6 +24,15 @@ import warnings
 warnings.filterwarnings("ignore")
 
 def twoMeans(data):
+    """
+    두 개의 평균을 비교하여 통계 분석을 수행하고 Plotly를 사용하여 막대 그래프를 생성합니다.
+
+    Args:
+        data (pandas.DataFrame): 분석에 사용될 데이터 프레임. 컬럼은 'avgTa', 'sumRn', 'avgWs', 'avgRhm', 'effRhm', 'Rntf', 'noRn', 'fire_occur'로 구성되어야 합니다.
+
+    Returns:
+        None
+    """
     selected_data = data[['avgTa', 'sumRn', 'avgWs', 'avgRhm', 'effRhm', 'Rntf', 'noRn', 'fire_occur']]
     # 컬럼 선택
     selected_col = st.selectbox("SELECT COLUMN", ['avgTa', 'sumRn', 'avgWs', 'avgRhm', 'effRhm', 'noRn'])

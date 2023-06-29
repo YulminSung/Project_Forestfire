@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.colors import LinearSegmentedColormap
-from matplotlib import font_manager as fm
+import matplotlib.font_manager as fm
 import seaborn as sns
 import plotly.express as px
 import folium
@@ -30,16 +30,14 @@ import os
 import warnings
 warnings.filterwarnings("ignore")
 
-
-@st.cache_data
+@st.cache_data()
 def font_set():
     # matplotlib 한글 폰트 설정
     font_dirs = [os.getcwd() + '/nanum']
     font_files = fm.findSystemFonts(fontpaths=font_dirs)
     for font_file in font_files:
         fm.fontManager.addfont(font_file)
-    fm._load_fontmanager(try_read_cache=False)
-
+    plt.rcParams['font.family'] = 'NanumGothic'
 
 def visualize_forestfire_by_region(dataframe, region_column, value_column, cmap_name, title):
     """
