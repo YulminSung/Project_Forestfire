@@ -47,7 +47,7 @@
     - 기상요인을 고려해 강원도 지역을 9개로 나누어서 각각 지역에 대해 ML 모델 생성
     - 실시간 API 요청을 통한 각 지역별 실시간 산불위험지수(DWI) 지도시각화
 
-<img src="/file/img/home_img.png" width="800" height="900">
+<img src="/file/img/home_img.png" width="700" height="800">
 
 - **EDA**
   - 강원도 기상 정보를 바탕으로 강원도 지역 9 분할 과정
