@@ -54,7 +54,7 @@
     - 강원지방기상청 관할 예·특보구역에 따라 12 분할
     - 강원도 기상관측소 위치정보를 고려해 9 분할로 수정
 
-<img src="/file/img/EDA_img.png" width="900" height="500">
+<img src="/file/img/EDA_img.png" width="900" height="400">
 
 - **STAT**
   - 기상요인을 고려해 강원도 지역을 9개로 분할한 각 지역에 대해 통계분석
