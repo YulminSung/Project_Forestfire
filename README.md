@@ -54,15 +54,15 @@
     - 강원지방기상청 관할 예·특보구역에 따라 12 분할
     - 강원도 기상관측소 위치정보를 고려해 9 분할로 수정
 
-<img src="/file/img/EDA_img.png" width="700" height="350">
+<img src="/file/img/EDA_img.png" width="750" height="350">
 
 - **STAT**
   - 기상요인을 고려해 강원도 지역을 9개로 분할한 각 지역에 대해 통계분석
     - Python 환경에서 통계분석에 한계가 있어 SPSS 에서 진행
     - 각 지역별 종속변수에 영향을 미치는 독립변수 요소에 대해 파악
 
-<img src="/file/img/stat_img1.png" width="600" height="350">
-<img src="/file/img/stat_img2.png" width="600" height="350">
+<img src="/file/img/stat_img1.png" width="750" height="350">
+<img src="/file/img/stat_img2.png" width="750" height="350">
 
 - **ML**
   - 기상요인을 고려해 강원도 지역을 9개로 분할한 각 지역에 대해 ML 모델 생성
