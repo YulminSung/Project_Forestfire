@@ -41,28 +41,28 @@
 - 주요 업무 : 강원도 산불 예측 및 피해 최소화 프로젝트 : 머신러닝과 딥러닝을 활용한 모델 개발
 - 기간 : 2023.05.22 ~ 2023.06.23
 
-## ✔ 주요 기능
+## ✔ 대시보드 주요 기능
 - **HOME**
   - 강원도 산불위험지수(DWI) 지도시각화
     - 기상요인을 고려해 강원도 지역을 9개로 나누어서 각각 지역에 대해 ML 모델 생성
     - 실시간 API 요청을 통한 각 지역별 실시간 산불위험지수(DWI) 지도시각화
 
-<img src="/file/img/home_img.png" width="700" height="800">
+<img src="/file/img/home_img.png" width="650" height="700">
 
 - **EDA**
   - 강원도 기상 정보를 바탕으로 강원도 지역 9 분할 과정
     - 강원지방기상청 관할 예·특보구역에 따라 12 분할
     - 강원도 기상관측소 위치정보를 고려해 9 분할로 수정
 
-<img src="/file/img/EDA_img.png" width="900" height="400">
+<img src="/file/img/EDA_img.png" width="700" height="350">
 
 - **STAT**
   - 기상요인을 고려해 강원도 지역을 9개로 분할한 각 지역에 대해 통계분석
     - Python 환경에서 통계분석에 한계가 있어 SPSS 에서 진행
     - 각 지역별 종속변수에 영향을 미치는 독립변수 요소에 대해 파악
 
-<img src="/file/img/stat_img1.png">
-<img src="/file/img/stat_img2.png">
+<img src="/file/img/stat_img1.png" width="600" height="350">
+<img src="/file/img/stat_img2.png" width="600" height="350">
 
 - **ML**
   - 기상요인을 고려해 강원도 지역을 9개로 분할한 각 지역에 대해 ML 모델 생성
@@ -78,6 +78,8 @@
   - Warning message 와 GPS 기반 주소 및 이미지 전송
 
 <img src="/file/img/DL_img.png" width="500" height="600">
+
+---
 
 ## ✔ 설치 방법
 
@@ -124,7 +126,7 @@ xgboost==1.7.5
 ```
 git clone https://github.com/YulminSung/Project_Forestfire.git
 ```
-- 프로젝트 경로에서 가상환경 설치 후 접속합니다. (Windows 11 기준)
+- 프로젝트 경로에서 가상환경 설치 후 접속합니다. (Windows 10 기준)
 ```
 virtualenv venv
 source venv/Scripts/activate
