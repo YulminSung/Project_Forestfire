@@ -1,7 +1,7 @@
 # ForestFire (2023.05.22 ~ 2023.06.23)
 <br/>
 
-## [1. Streamlit Service](https://yulminsung-forestfire-app-b2m0vk.streamlit.app/ "Streamlit Link")<br/>
+## [1. Streamlit Service](https://yulminsung-project-forestfire-app-jmvwlg.streamlit.app/ "Streamlit Link")<br/>
 
 ## [2. Personal Code](https://github.com/YulminSung/Project_Forestfire/tree/main/code ".Code Link")<br/>
 
